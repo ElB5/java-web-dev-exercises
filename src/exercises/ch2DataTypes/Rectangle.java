@@ -1,4 +1,4 @@
-package exercises;
+package exercises.ch2DataTypes;
 
 import java.util.Scanner;
 

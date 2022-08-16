@@ -1,4 +1,4 @@
-package exercises;
+package exercises.ch3ControlFlowAndCollections;
 
 import java.util.Arrays;
 

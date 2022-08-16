@@ -1,6 +1,5 @@
-package exercises;
+package exercises.ch2DataTypes;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Miles {
