@@ -7,6 +7,10 @@ public class MenuItems {
     private String description;
     private boolean newItem;
 
+    public MenuItems (String name) {
+        this.name = name;
+    }
+
 
     public String getName(String name) {
         return name;
@@ -41,5 +45,3 @@ public class MenuItems {
     }
 }
 
-//    <HashMap<String
-//}
