@@ -1,80 +1,58 @@
 package org.launchcode.java.studioch4Restaurant;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Menu {
+    private Date lastUpdated;
+    private ArrayList<MenuItems> items;
 
-    private ArrayList<MenuItems> menuItems = new ArrayList<>();
 
-    private LocalDate lastUpdated;
-
-    public void addMenuItems(MenuItems name) {
-        this.menuItems.add(name);
+    public Menu(Date dateUpdated, ArrayList<MenuItems> item) {
+        this.lastUpdated = dateUpdated;
+        this.items = item;
     }
 
-    public void removeMenuItems(MenuItems name) {
-        this.menuItems.remove(name);
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 
-    public ArrayList<MenuItems> getMenuItems() {
-        return menuItems;
+    public void setItems(ArrayList<MenuItems> items) {
+        this.items = items;
     }
 
-    public LocalDate getLastUpdated() {
+    public Date getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated() {
-        this.lastUpdated = LocalDate.now();
+    public ArrayList<MenuItems> getItems() {
+        return items;
     }
 
-        private String categories;
-        private String appetizers;
-        private String mainCourse;
-        private String dessert;
-        //private Date lastUpdated;
+    public void addMenuItem(MenuItems item) {
+        this.items.add(item);
+    }
 
-        private String item;
+    public void removeMenuItem(MenuItems item) {
+        this.items.remove(item);
+    }
 
-        public String getCategories(String categories) {
-            return categories;
+    //return date menu last updated
+    public String updatedDate() {
+        System.out.println("the menu was last updated " + this.lastUpdated);
+        return ("the menu was last updated " + this.lastUpdated);
+    }
+
+    //print 1 menu item
+    public void printOneMenuItem(MenuItems item){
+        System.out.println(item.getDescription());
+    }
+
+    //print all menu items, iterates thorugh all items in menu and printing them (no parameters since no additional
+    //data needed to execute
+    public void printAllMenuItems () {
+        for(MenuItems menuItem : this.items) {
+            System.out.println(menuItem.getDescription());
         }
-
-        public void setCategories(String categories) {
-            this.categories = categories;
-        }
-
-        public String getItem(String item) {
-            return item;
-        }
-
-        public void setItem(String item){
-            this.item = item;
-        }
-
-        public String getAppetizers(String appetizers) {
-            return appetizers;
-        }
-
-        public void setAppetizers(String appetizers) {
-            this.appetizers = appetizers;
-        }
-
-        public String getMainCourse(String mainCourse) {
-            return mainCourse;
-        }
-
-        public void setMainCourse(String mainCourse) {
-            this.mainCourse = mainCourse;
-        }
-
-        public String getDessert(String dessert) {
-            return dessert;
-        }
-
-        public void setDessert(String dessert) {
-            this.dessert = dessert;
-        }
+    }
 }
-

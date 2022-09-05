@@ -1,47 +1,62 @@
 package org.launchcode.java.studioch4Restaurant;
 
 public class MenuItems {
-
-    private String name;
     private double price;
     private String description;
-    private boolean newItem;
+    private String category;
+    private boolean isNew;
 
-    public MenuItems (String name) {
-        this.name = name;
-    }
-
-
-    public String getName(String name) {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice(double price) {
-        return price;
+    public MenuItems(double price, String description, String category, boolean isNew) {
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.isNew = isNew;
     }
 
     public void setPrice(double price) {
         this.price = price;
     }
 
-    public String getDescription(String description) {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public boolean getNewItem(boolean newItem) {
-        return newItem;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public void setNewItem(boolean newItem) {
-        this.newItem = newItem;
+    public boolean setNew(boolean aNew) {
+        isNew = aNew;
+        return aNew;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    //alert if menu is new or old
+    public String isNew() {
+        if (isNew == true) {
+            return "try this tasty new dish";
+        } else {
+            return "very old";
+        }
+    }
+
+    public boolean isEqual(MenuItems comparisonItem) {
+        if (this == comparisonItem) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

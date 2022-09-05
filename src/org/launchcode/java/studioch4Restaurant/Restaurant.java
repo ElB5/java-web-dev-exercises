@@ -1,25 +1,33 @@
 package org.launchcode.java.studioch4Restaurant;
 
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class Restaurant {
     public static void main(String[] args) {
-        MenuItems shrimp = new MenuItems ("shrimp");
-        MenuItems steak = new MenuItems ("steak");
+        MenuItems newItem1 = new MenuItems(14.99, "Garlic Pasta", "Dinner", true);
+        MenuItems newItem2 = new MenuItems(44.99, "Steak", "Dinner", false);
+        MenuItems newItem3 = new MenuItems(4.99, "Garlic Bread", "Appetizer", true);
 
-        Menu menu = new Menu();
-        //add menu item:
-        menu.addMenuItems(shrimp);
-        menu.addMenuItems(steak);
+        Date today = Calendar.getInstance().getTime();
+        ArrayList<MenuItems> startingMenu = new ArrayList<>();
 
-        //remove menu item:
-        menu.removeMenuItems(shrimp);
+        Menu ourMenu = new Menu(today, startingMenu);
 
-    //print menu items
-//        for(MenuItems item : menu.getMenuItems()) {
-//            System.out.println(item.getName());
-//        }
+        ourMenu.addMenuItem(newItem1);
+        ourMenu.addMenuItem(newItem2);
+        ourMenu.addMenuItem(newItem3);
 
-//A way to tell when the menu was last updated.
-        menu.setLastUpdated();
-        System.out.println(menu.getLastUpdated());
-        }
+        ourMenu.printAllMenuItems();
+
+        ourMenu.printOneMenuItem(newItem1);
+
+        ourMenu.removeMenuItem(newItem2);
+
+        ourMenu.printAllMenuItems();
+
+        ourMenu.updatedDate();
+
+    }
 }
