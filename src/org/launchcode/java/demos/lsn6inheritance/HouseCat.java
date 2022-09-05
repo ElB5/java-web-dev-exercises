@@ -4,10 +4,18 @@ public class HouseCat extends Cat {
     private String name;
     private String species = "Felis catus";
 
+
+//constructor
     public HouseCat(String aName, double aWeight) {
         super(aWeight);
         name = aName;
     }
+
+    //constructor 2
+    public HouseCat(String aName) {
+        name = aName;
+    }
+
 
     public boolean isSatisfied() {
         return !isHungry() && !isTired();
@@ -15,7 +23,12 @@ public class HouseCat extends Cat {
 
     @Override
     public String noise() {
-        return "Hello, my name is " + name + "!";
+        if (isSatisfied()) {
+            return "Hello, my name is " + name + "!";
+        } else {
+            return "hi";
+//            super.noise();
+        }
     }
 
     public String purr() {
